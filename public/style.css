@@ -1,0 +1,274 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    /* color: black; */
+}
+
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,48,164,1) 51%, rgba(0,212,255,1) 100%);
+}
+
+
+.fa-thumbs-up {
+    color: blue;
+    font-size: 35px;
+    margin-left: 20px;
+    position: relative;
+    top: 30px;
+}
+
+.text-center {
+    color: white;
+    font-family:monospace;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+}
+
+.card.dark-mode {
+    background-color: #444;
+    color: white;
+}
+
+.btn-primary.dark-mode {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* SVG Button Styles */
+.theme-toggle {
+    background: cyan;
+    border: 2px solid black;
+    border-radius: 15%;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.theme-toggle .sun-and-moon {
+    display: block;
+    fill: var(--icon-color, currentColor);
+}
+
+.theme-toggle .sun-and-moon .sun {
+    transition: fill 0.25s;
+}
+
+.theme-toggle .sun-and-moon .sun-beams {
+    transition: stroke 0.25s;
+}
+
+body.dark-mode .theme-toggle .sun-and-moon .sun {
+    fill: #ffd700; /* Dark mode sun color */
+}
+
+body.dark-mode .theme-toggle .sun-and-moon .sun-beams {
+    stroke: #ffd700; /* Dark mode sun beams color */
+}
+
+/* Rating Styles */  
+/* Enhanced 3D Rating Styles */
+.rating {
+    direction: rtl;
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    perspective: 5100px; /* Add perspective for 3D effect */
+}
+
+.rating span.star {
+    color: gray;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+    transform: rotateY(0deg);
+}
+
+.rating span.star:hover,
+.rating span.star:hover ~ span.star {
+    color: gold;
+    transform: rotateY(20deg); /* Rotate for 3D effect */
+}
+
+.rating span.star.selected,
+.rating span.star.selected ~ span.star {
+    color: gold;
+    transform: rotateY(022deg); /* Reset rotation on selection */
+}
+
+/* Adjusting for dark mode */
+body.dark-mode .rating span.star {
+    color: lightgray;
+}
+body.dark-mode .rating span.star:hover,
+body.dark-mode .rating span.star:hover ~ span.star,
+body.dark-mode .rating span.star.selected,
+body.dark-mode .rating span.star.selected ~ span.star {
+    color: yellow;
+}
+
+/* Adding glow effect */
+.rating span.star.selected {
+    box-shadow: 0 0 10px gold;
+}
+body.dark-mode .rating span.star.selected {
+    box-shadow: 0 0 10px yellow;
+}
+
+
+.main-rating{
+    position: relative;
+    top: -40px;
+    left: 860px;
+}
+
+/* rating css */
+.range-container {
+    display: flex;
+    align-items: center;
+}
+.percentage {
+    margin-left: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .navbar .container-fluid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .fa-thumbs-up {
+        font-size: 25px;
+        top: 10px;
+    }
+
+    .main-rating {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .theme-toggle {
+        margin-top: 10px;
+    }
+}
+
+/* Small devices (tablets, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .navbar .container-fluid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .fa-thumbs-up {
+        font-size: 30px;
+        top: 20px;
+    }
+
+    .main-rating {
+        position: relative;
+        top: -20px;
+        left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .card {
+        margin: 15px 0;
+    }
+
+    .theme-toggle {
+        margin-top: 10px;
+    }
+}
+
+/* Medium devices (desktops, 768px to 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .main-rating {
+        position: relative;
+        top: -30px;
+        left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* Large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+    .main-rating {
+        position: relative;
+        top: -40px;
+        left: 860px;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 768px) {
+    .navbar .container-fluid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-brand {
+      margin-bottom: 10px;
+    }
+  
+    .navbar-collapse {
+      text-align: center;
+    }
+  
+    .theme-toggle {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px to 992px) */
+  @media (min-width: 768px) and (max-width: 992px) {
+    .theme-toggle {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Large devices (large desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .theme-toggle {
+      margin-top: 0;
+    }
+  }
+  
