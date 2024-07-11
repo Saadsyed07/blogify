@@ -66,8 +66,8 @@
             <form>
               <div class="form-group">
                 <div class="range-container">
-                  <input type="range" class="form-control-range" id="formControlRange<%= index %>" min="0" max="100" value="50">
-                  <span class="rangeValue" id="rangeValue<%= index %>">50%</span>
+                  <input type="range" class="form-control-range" id="formControlRange<%= blog.id %>" min="0" max="100" value="50" onchange="saveRating('<%= blog.id %>')">
+                  <span class="rangeValue" id="rangeValue<%= blog.id %>">50%</span>
                 </div>
               </div>
             </form>
@@ -76,6 +76,7 @@
       </div>
     <% }) %>
   </div>
+  
   
   <script src="function.js"></script>
 </body>

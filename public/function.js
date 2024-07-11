@@ -32,3 +32,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const rangeInputs = document.querySelectorAll('.form-control-range');
+    rangeInputs.forEach(input => {
+      const blogId = input.id.replace('formControlRange', '');
+      const savedValue = localStorage.getItem(`rating-${blogId}`);
+      if (savedValue) {
+        input.value = savedValue;
+        document.getElementById(`rangeValue${blogId}`).textContent = `${savedValue}%`;
+      }
+    });
+  });
+  
+  function saveRating(blogId) {
+    const rangeInput = document.getElementById(`formControlRange${blogId}`);
+    const value = rangeInput.value;
+    localStorage.setItem(`rating-${blogId}`, value);
+    document.getElementById(`rangeValue${blogId}`).textContent = `${value}%`;
+  }
+  
+  function myFunction(element) {
+    element.classList.toggle("fa-thumbs-down");
+  }
+  
